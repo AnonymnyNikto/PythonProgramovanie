@@ -55,20 +55,28 @@ mesiac(800,230,40,"red","orange",40,0)
 ##koniec 5. ulohy
 
 ##zaciatok 6. ulohy
-def lodka(x,y,a,b,c,v):
-    canvas.create_rectangle(x-c,y-2*b,x,y,fill="brown")
-    canvas.create_polygon(x,y-2*b,x+a/2,y-b,x,y-b/2,fill="white",outline="black")
-    canvas.create_polygon(x-a,y,x+a,y,x+a/2,y+b,x-a/2,y+b,fill="brown")
-    mesiac(x,y+v,v,"brown","pink",0,0)
-    mesiac(x-v,y+v,v,"brown","pink",v,0)
+def lodka(x,y,a,c):
+    canvas.create_rectangle(x-c,y-2*(a-50),x,y,fill="brown")
+    canvas.create_polygon(x,y-2*(a-50),x+a/2,y-(a-50),x,y-(a-50)/2,fill="white",outline="black")
+    canvas.create_polygon(x-a,y,x+a,y,x+a/2,y+(a-50),x-a/2,y+(a-50),fill="brown")
+    mesiac(x,y+c,c,"brown","pink",0,0)
+    mesiac(x-c,y+c,c,"brown","pink",c,0)
 
-lodka(500,480,100,50,20,20)
+lodka(500,480,100,20)
 ##koniec 6. ulohy
 
 ##zaciatok 8. ulohy
-lodka(400,600,150,100,40,40)
-lodka(200,800,200,150,60,60)
-for _ in range(1,4):
+x=400
+y=600
+a=150
+b=40
+
+for _ in range(1,3):
+    lodka(x,y,a,b)
+    x-=200
+    y+=200
+    a+=50
+    b+=20
     
 
 ##koniec 8. ulohy
