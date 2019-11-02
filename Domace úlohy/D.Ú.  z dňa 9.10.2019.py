@@ -20,14 +20,14 @@ def strom(x,y,z):
 
 def trava(x,y,c):
     for i in range(1,c):
+        a = random.randint(1,5)
         b = random.randint(-50,50)
         d = random.randint(1,50)
-        canvas.create_line(x,y,x-b,y-d,fill="green")
+        canvas.create_line(x,y,x-b,y-d,fill="green",width=a)
         
-a = random.randint(1,25)
-for i in range(1,a):
+for i in range(1,10):
     strom(random.randint(100,1000),random.randint(100,1000),random.randint(10,100))
 
-a = random.randint(1,50)
-for i in range(1,a):
+
+for i in range(1,20):
     trava(random.randint(100,1000),random.randint(100,1000),random.randint(1,25))
