@@ -9,21 +9,23 @@ def farba():
     b = random.randrange(256)
     return f"#{r:02x}{g:02x}{b:02x}"
 
-canvas=tkinter.Canvas(width=1000,height=1000,background="white")
+w = 1000
+
+canvas=tkinter.Canvas(width= w,height= w,background="white")
 canvas.pack()
 
 ##zaciatok 2. ulohy
-def vlajka(k,c):
-    canvas.create_oval(0+k,400,300+k,700,fill="brown")
-    canvas.create_line(150+k,400,150+k,200)
-    canvas.create_rectangle(150+k,200,350+k,300,fill=c)
+def vlajka(x,y,c):
+    canvas.create_oval(x,y,300+x,y+300,fill="brown")
+    canvas.create_line(150+x,y,150+x,y-200)
+    canvas.create_rectangle(150+x,y-200,350+x,y-100,fill=c)
 
-vlajka(0,"green")
+vlajka(0,400,"green")
 
 ##koniec 2. ulohy
 
 ##zaciatok 3. ulohy
-vlajka(600,"red")
+vlajka(600,400,"red")
 ##koniec 3. ulohy
 
 
@@ -31,12 +33,12 @@ canvas.create_rectangle(0,500,1000,1000,fill="blue",outline="blue")
 
 ##zaciatok 1. ulohy
 def mesiac(x,y,z,f,b,v,r):
-    canvas.create_oval(x,y,x+z-r,y+z,fill=b,outline=b)
-    canvas.create_oval(x+(z//2)-v,y,x+z+(z//2)-v-r,y+z,fill= f,outline= f)    
+    canvas.create_oval(x,y,x+z-r,y+z,fill=b,width = 0)
+    canvas.create_oval(x+(z//2)-v,y,x+z+(z//2)-v-r,y+z,fill= f,width = 0)    
 
 y = random.randint(50,350)
 mesiac(500,y,100,"white","yellow",0,0)
-y = 1000-y
+y = w-y
 mesiac(500,y,-100,"blue","yellow",-100,-200)
 ## koniec 1. ulohy
 
@@ -66,5 +68,7 @@ lodka(500,480,100,50,20,20)
 ##zaciatok 8. ulohy
 lodka(400,600,150,100,40,40)
 lodka(200,800,200,150,60,60)
+for _ in range(1,4):
+    
 
 ##koniec 8. ulohy
