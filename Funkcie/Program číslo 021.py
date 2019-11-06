@@ -19,10 +19,7 @@ def mesiac(x,y,z,f,b,v,r):
     m = canvas.create_oval(x+(z//2)-v,y,x+z+(z//2)-v-r,y+z,fill= f,width = 0)
     return p, m
 
-y = random.randint(50,350)
-mesiac(500,y,100,"white","yellow",0,0)
-z = w-y
-mesiac(500,z,-100,"blue","yellow",-100,-200)
+
 
     
 ##zaciatok 2. ulohy
@@ -53,6 +50,11 @@ mesiac(220,220,60,"green","red",0,0)
 
 mesiac(850,230,40,"red","orange",0,0)
 mesiac(800,230,40,"red","orange",40,0)
+
+y = random.randint(50,350)
+mesiac(500,y,100,"white","yellow",0,0)
+q = w - y
+mesiac(500,q,-100,"blue","yellow",-100,-200)
 
 ##koniec 5. ulohy
 
@@ -106,6 +108,3 @@ for _ in range(1,50):
 ##    for i in a:
 ##        canvas.delete(i)
 ##
-
-
-
